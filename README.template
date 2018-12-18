@@ -1,0 +1,13 @@
+# wait-for-keypress
+
+## Usage
+```javascipt
+const waitForKeypress = require('@xtrctio/wait-for-keypress');
+
+(async () => {
+    await waitForKeypress({a: 'Success!', f: 'Failure!'});
+})()
+```
+
+## API
+{{>main}}
