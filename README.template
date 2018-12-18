@@ -1,7 +1,7 @@
 # wait-for-keypress
 
 ## Usage
-```javascipt
+```javascript
 const waitForKeypress = require('@xtrctio/wait-for-keypress');
 
 (async () => {

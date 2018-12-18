@@ -3,12 +3,12 @@ const keypress = require('keypress');
 keypress(process.stdin);
 
 /**
- * Wait for configured keys to be pressed
  * @param {object} keyConfig Object matching keys to their return value
- * @param {string[]} [prevKeys=[]]
+ * @param {string[]} [prevKeys=[]] Just used to pass state between calls
  * @returns {Promise<*>}
+ * @private
  */
-const waitForKeypress = async (keyConfig, prevKeys = []) => {
+const _waitForKeypress = async (keyConfig, prevKeys = []) => {
   process.stdin.setEncoding('utf8');
   process.stdin.setRawMode(true);
   return new Promise((res) => {
@@ -27,9 +27,16 @@ const waitForKeypress = async (keyConfig, prevKeys = []) => {
         prevKeys = [];
       }
 
-      return waitForKeypress(keyConfig, prevKeys).then((result) => res(result));
+      return _waitForKeypress(keyConfig, prevKeys).then((result) => res(result));
     });
   });
 };
+
+/**
+ * Wait for configured keys to be pressed
+ * @param {object} keyConfig Object matching keys to their return value
+ * @returns {Promise<*>}
+ */
+const waitForKeypress = async (keyConfig) => _waitForKeypress(keyConfig);
 
 module.exports = waitForKeypress;

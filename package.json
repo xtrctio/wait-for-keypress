@@ -15,17 +15,17 @@
     "jsdoc": "^3.5.5",
     "jsdoc-to-markdown": "^4.0.1"
   },
+  "files": [
+    "index.js",
+    "README.md",
+    "test.js"
+  ],
   "homepage": "https://github.com/xtrctio/wait-for-keypress#readme",
   "husky": {
     "hooks": {
       "pre-commit": "npm run docs && git add README.md && LIST=`git diff-index --cached --name-only HEAD | grep '.*\\.js' | grep -v json`; if [ \"$LIST\" ]; then npm run lint && git add $LIST; fi"
     }
   },
-  "files": [
-    "index.js",
-    "README.md",
-    "test.js"
-  ],
   "keywords": [
     "input",
     "keypress",
