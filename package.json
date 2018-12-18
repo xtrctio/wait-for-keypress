@@ -21,6 +21,11 @@
       "pre-commit": "npm run docs && git add README.md && LIST=`git diff-index --cached --name-only HEAD | grep '.*\\.js' | grep -v json`; if [ \"$LIST\" ]; then npm run lint && git add $LIST; fi"
     }
   },
+  "files": [
+    "index.js",
+    "README.md",
+    "test.js"
+  ],
   "keywords": [
     "input",
     "keypress",
