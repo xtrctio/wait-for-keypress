@@ -5,7 +5,7 @@
 const waitForKeypress = require('@xtrctio/wait-for-keypress');
 
 (async () => {
-    await waitForKeypress({a: 'Success!', f: 'Failure!'});
+    const result = await waitForKeypress({a: 'Success!', f: 'Failure!'});
 })()
 ```
 
