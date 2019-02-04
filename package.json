@@ -1,7 +1,7 @@
 {
   "name": "@xtrctio/wait-for-keypress",
   "description": "Wait for a given keypress",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Eric Hacke",
   "bugs": {
     "url": "https://github.com/xtrctio/wait-for-keypress/issues"
